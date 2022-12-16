@@ -1,0 +1,180 @@
+@import "../breakpoints/breakpoints.scss";
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+
+body {
+  background: black;
+
+  @include media('<=tablet') {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  padding: 15%;
+  font-family: "Nunito", helvetica, verdana, nunito;
+  width: 970px;
+  margin: 0 auto;
+
+  @include media('<=tablet') {
+    width: 90%;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  @include media('<phone') {
+    width: 90%;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+.CitySelector {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.CitySelector>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CitySelectorPrompt {
+  color: #fc0;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 20px;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 13%;
+  animation: slide-down 3s forwards;
+
+  @include media("<=tablet") {
+    font-size: 14px;
+  }
+
+}
+
+.CitySelectorCities {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3px;
+  cursor: pointer;
+
+}
+
+.CitySelectorCities>div.gold1 {
+  border: 1px solid #fc0;
+  box-shadow: 0 0 10px -2px #fc0, 0px 0px 10px #fc0 inset;
+  color: #fc0;
+  width: 100%;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Nunito", helvetica, verdana, nunito;
+  animation: slide-up 1.5s forwards;
+
+  &:hover {
+    box-shadow: 0 0 10px 4px #fc0,
+      0px 2px 15px #fc0 inset;
+    transition: 0.3s;
+  }
+}
+
+.CitySelectorCities>div.gold2 {
+  border: 1px solid #fc0;
+  box-shadow: 0 0 10px -2px #fc0, 0px 0px 10px #fc0 inset;
+  color: #fc0;
+  width: 100%;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Nunito", helvetica, verdana, nunito;
+  animation: slide-up 2.5s forwards;
+
+  &:hover {
+    box-shadow: 0 0 10px 4px #fc0,
+      0px 2px 15px #fc0 inset;
+    transition: 0.3s;
+  }
+}
+
+
+.CitySelectorCities>div.gold3 {
+  border: 1px solid #fc0;
+  box-shadow: 0 0 10px -2px #fc0, 0px 0px 10px #fc0 inset;
+  color: #fc0;
+  width: 100%;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Nunito", helvetica, verdana, nunito;
+  animation: slide-up 4s forwards;
+
+  &:hover {
+    box-shadow: 0 0 10px 4px #fc0,
+      0px 2px 15px #fc0 inset;
+    transition: 0.3s;
+  }
+}
+
+
+.CitySelectorCities>div.blue {
+  color: #fc0;
+  width: 100%;
+  border-radius: 10px;
+  color: #0cf;
+  box-shadow: 0 0 10px 2px #0cf, 0px 0px 10px #0cf inset;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Nunito", helvetica, verdana, nunito;
+  animation: slide-up 5.5s forwards;
+
+  &:hover {
+    box-shadow: 0 0 10px 4px rgb(60, 216, 255), 0px 2px 15px #0cf inset;
+    transition: 0.3s;
+  }
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box !important;
+}

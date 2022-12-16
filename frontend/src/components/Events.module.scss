@@ -1,0 +1,135 @@
+@import "../breakpoints/breakpoints.scss";
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Plus+Jakarta+Sans:wght@300;600&display=swap");
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    background-image: url("https://posh-b2.s3.us-east-2.amazonaws.com/meta+(1).mp4");
+    background-size: cover;
+}
+
+.container {
+    animation: fadeIn 2.5s ease-in;
+    padding: 3%;
+
+    .navBar {
+        height: 60px;
+        min-height: 60px;
+        display: flex;
+        gap: 15px;
+        margin-left: 1.7%;
+
+        .active {
+            color: #fc0;
+            border: 1px solid #fc0;
+        }
+
+        div {
+            cursor: pointer;
+            border: 1px solid #7a7b7d;
+            text-transform: uppercase;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-weight: 700;
+            color: #7a7b7d;
+            padding: 8px 30px;
+            border-radius: 50px;
+            transition: 0.2s;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                color: #fc0;
+                border: 1px solid #fc0;
+            }
+
+        }
+    }
+
+
+    .cardsGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include media("<tablet") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media("<phone") {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .cardTicket {
+        height: 400px;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 5%;
+        border-radius: 20px;
+        background-size: cover;
+        background-position: center center;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transition: 0.2s;
+        transition: all 0.5s ease;
+
+        &:hover {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    .eventInfo {
+        display: flex;
+        width: 100%;
+        text-shadow: 0 0 10px rgb(0 0 0 / 60%);
+        color: #fff;
+        background: linear-gradient(rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.8666666667) 60%,
+                #000 80%);
+        padding: 5%;
+    }
+
+    .eventName {
+        color: #fff;
+        height: 24px;
+        overflow: hidden;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 600;
+        font-size: 23px;
+    }
+
+    .eventDetails {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        margin-left: 5%;
+        padding-left: 5%;
+        border-left: rgba(255, 255, 255, 0.4666666667) 1px solid;
+    }
+
+    .eventLocation {
+        padding-top: 3%;
+        padding-bottom: 7%;
+        padding-left: .5%;
+        color: #fff;
+        overflow: hidden;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 200;
+        font-size: 20px;
+    }
+}
